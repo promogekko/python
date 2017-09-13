@@ -1,0 +1,8 @@
+Code, Type,Fournisseur,Date
+------------------------------
+AFD304,Boulon, ASPEC, 17/08/2016
+AER520,Tuyau,Gekko, 22/04/2016
+DFR567,ecrou, CNPM, 23/04/2016
+FG2345,poutre, le bois de france, 01/01/2012
+GRR202,fenetre, Partres, 07/07/2002
+HRR309,vitre, glaciere, 11/02/2016
