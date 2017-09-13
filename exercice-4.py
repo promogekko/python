@@ -64,15 +64,17 @@ for x in range(2,len(data)):
     #print(items)
     m = re.search(r"([A-Z]{3})(\d{3})", items[0])
     if m is not None:
-        #print (items)
+        print (items)
         test = Record(*items)
         c = test.code,test.desc,test.societe,test.date
         Produits.append(c)
 
-reponse = input ("taper un code produit ou taper enter pour la liste des codes\n")
+reponse = input ("taper un code produit ou taper enter pour obtenir la liste des codes\n")
 if reponse is "":
     for x in Produits:
         print(x[0])
-
-
-
+else:
+    reponse = reponse.rstrip()
+    for x in Produits:
+        if x[0] == reponse:
+            print(x[1],x[2],x[3])
