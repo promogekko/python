@@ -15,6 +15,7 @@ data = F.readlines()
 #print(data)
 for x in range(2,len(data)):
     line = data[x].rstrip()
+
     items = line.split(',')
     #print(items)
     m = re.search(r"([A-Z]{3})(\d{3})", items[0])
