@@ -4,7 +4,7 @@
 # The “Code entry type” drop-down can be changed to upload a ZIP file but for our short
 # function we will stick to the “Edit code inline” option.
 # Replace the default function in the text box and paste in the following code.Python
-
+# ---------------------------------- kevin
 import base64
 import json
 import os
@@ -14,13 +14,13 @@ from urllib import request, parse
 TWILIO_SMS_URL = "https://api.twilio.com/2010-04-01/Accounts/{}/Messages.json"
 TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN")
-
-
+# ----------------------------------- kevin
+# ----------------------------------------------- flore
 def lambda_handler(event, context):
     to_number = event['To']
     from_number = event['From']
     body = event['Body']
-
+# ------------------------ flore ----------------------
     if not TWILIO_ACCOUNT_SID:
         return "Unable to access Twilio Account SID."
     elif not TWILIO_AUTH_TOKEN:
@@ -31,20 +31,24 @@ def lambda_handler(event, context):
         return "The function needs a 'From' number in the format +19732644156"
     elif not body:
         return "The function needs a 'Body' message to send."
-
+# ----------------------------------------     maxime
+    # #chadi
     # insert Twilio Account SID into the REST API URL
     populated_url = TWILIO_SMS_URL.format(TWILIO_ACCOUNT_SID)
     post_params = {"To": to_number, "From": from_number, "Body": body}
 
+    #sylain
     # encode the parameters for Python's urllib
     data = parse.urlencode(post_params).encode()
     req = request.Request(populated_url)
 
+    # soufiane
     # add authentication header to request based on Account SID + Auth Token
     authentication = "{}:{}".format(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
     base64string = base64.b64encode(authentication.encode('utf-8'))
     req.add_header("Authorization", "Basic %s" % base64string.decode('ascii'))
 
+#------------------------------------------ benjamin
     try:
         # perform HTTP POST request
         with request.urlopen(req, data) as f:
