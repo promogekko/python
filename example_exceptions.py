@@ -6,7 +6,7 @@ def funny_division(anumber):
     except (ZeroDivisionError, TypeError):
         return "entrer un nombre different de zero"
 
-for val in (0, "hello", 50.0, 13):
+for val in (0, "hello", 50.0, 3):
     print("Testing {}:".format(val), end=" ")
     print(funny_division(val))
 
@@ -33,3 +33,17 @@ finally:
     print("This cleanup code is always called")
 
 #-------------------------------------------------------------
+
+# Utilisez une exception pour calculer, dans une boucle évoluant de -3 à 3 compris, la
+# valeur de sin(x)/x.
+
+from math import sin
+
+for x in range(-3,4):
+    try:
+        print("{:.3f}".format(sin(x)/x), end=" ")
+    except:
+        print("{:.3f}".format(float(1)), end=" ")
+print()
+
+

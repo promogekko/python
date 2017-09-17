@@ -15,8 +15,8 @@ fantasy_authors = {
         b.author for b in books if b.genre == 'fantasy'}
 print(fantasy_authors)
 
-
-S = [ x**2 for x in range(10)]
+# -------------------------------------------
+S = [x**2 for x in range(10)]
 ST= {x**2 for x in range(10)}
 V = [2**i for i in range(13)]
 M = [x for x in S if x % 2 == 0]
@@ -26,7 +26,7 @@ print(set(ST))
 print(V)
 print(M)
 
-
+#-------------------- yield -------------
 def creerGenerateur():
         mylist = range(3)
         for i in mylist:
