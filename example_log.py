@@ -1,4 +1,4 @@
-import sys
+
 
 log_file= "jenkins.log"
 warn = "warning.txt"

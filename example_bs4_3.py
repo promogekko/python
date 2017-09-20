@@ -5,11 +5,12 @@ url = r"https://en.wikipedia.org/wiki/List_of_stations_of_the_Paris_M%C3%A9tro"
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text,"lxml")
-print(soup)
+#print(soup)
 
 tag_th = soup.find_all("th")
+print(tag_th)
 rows = soup.findAll('tr')
-print(len(rows))
+#print(len(rows))
 
 data = [[td.findChildren(text=True) for td in tr.findAll("td")] for tr in rows]
 #print(data)

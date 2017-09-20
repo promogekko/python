@@ -11,6 +11,46 @@ for contact in contacts:
     print("email: {email} -- {last}, {first}".format(**contact))
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #------------------------------------------------------------------
 
 class Options:
@@ -68,4 +108,4 @@ square.add_point(Point(1,2))
 square.add_point(Point(2,2))
 square.add_point(Point(2,1))
 t= square.perimeter()
-print(t)
+#print(t)

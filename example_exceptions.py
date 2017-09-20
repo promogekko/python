@@ -41,9 +41,9 @@ from math import sin
 
 for x in range(-3,4):
     try:
-        print("{:.3f}".format(sin(x)/x), end=" ")
-    except:
-        print("{:.3f}".format(float(1)), end=" ")
-print()
+        print("{:.3f}".format(sin(x)/x))
+    except ZeroDivisionError:
+        print("{:.3f}".format(float(1)))
+
 
 
